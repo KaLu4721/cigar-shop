@@ -1,0 +1,910 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+                
+                
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    
+    
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background-color: #050505;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+
+}
+    
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    
+}
+#navbar li a{
+    text-decoration: none; 
+    text-align: center; 
+    font-size: 16px;
+    font-weight: 600;
+    color: #dbdbdb;
+    transition: 0.3s ease;
+    display: inline-block; /* Sprečava širenje underline-a */
+    position: relative; /* Omogućava ::after da se odnosi samo na tekst */
+    padding: 5px 0;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color: #f1b901;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #f1b901;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#mobile{
+    display: none;
+    align-items: center;
+}
+
+#close{
+    display: none;
+}
+
+
+
+
+
+section {
+    padding: 0px;
+}
+
+.section-p1{
+    padding: 40px 80px;
+    padding-bottom: 0px;
+}
+
+
+
+
+
+
+
+
+#hero{
+    
+    
+        background-image: url('/images/Baner-1-Usce.jpg');
+        height: 35vh;
+        width: auto;
+        background-color: #575757;
+        
+        background-size: 55%; /* Smanjuje sliku na 50% originalne veličine */
+        background-repeat: no-repeat; /* Sprečava ponavljanje slike */
+        background-position: right; /* Poravnavanje slike u odnosu na div */
+        padding: 80px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+ 
+}
+#hero {
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+
+
+#hero p{
+    padding-bottom: 15px;
+    color: #707780;
+    text-align: center;
+    
+
+}
+#hero h1{
+    color: #000000;
+    font-size: 50px;
+}
+
+#hero button{
+    
+    margin-left: 340px;
+    padding: 0px 20px;
+    background-color: #f1b901;
+    cursor: pointer;
+    color: #fff;
+    border: 3px solid #f1b901;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    transition: 0.2s ease;
+   
+}
+#hero button:hover{
+    background-color: #000000;
+}
+
+#hero h1 {
+    animation: slideFromLeft 1s ease-out 0.5s both;
+}
+
+#hero p {
+    animation: slideFromRight 1s ease-out 0.7s both;
+}
+
+#hero button {
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+img.logo {
+    width: 100px;
+    height: auto;
+    
+}
+
+#proizvod1 {
+    text-align: center;
+    
+  
+    
+    
+
+}
+#proizvod1 h2{
+    
+    padding-top: 20px;
+}
+#proizvod1 .pro-container{
+    display: flex;
+    
+    justify-content: flex-start; /* Poravnava kartice levo */
+    
+    padding-top: 15px;
+    gap: 10px;
+    
+    flex-wrap: wrap;
+    
+    
+       
+}
+
+#proizvod1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #9c9c9c;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin: 15px 0;
+    transition: 0.2s ease;
+    position: relative;
+    
+    
+}
+
+#proizvod1 .pro:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    
+}
+
+#proizvod1 .pro img{
+    width: 100%;
+    
+    border-radius: 15px;
+}
+
+#proizvod1 .pro .opis{
+    text-align: start;
+    padding: 10px 10px;
+    
+}
+
+#proizvod1 .pro .opis span{
+    color: #707780;
+    font-size: 15px;
+
+}
+#proizvod1 .pro .opis h5{
+    font-size: 15px;
+}
+#proizvod1 .pro .opis h4{
+    padding-top: 0px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #23474b;
+}
+
+#proizvod1 .pro .korpa{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e4e3e3;
+    color:#000000;
+    border: 1px solid #a9b8be;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+#proizvod1 .pro .korpa:hover{
+    background-color: #f1b901;
+    color: #e4e3e3;
+}
+
+#baner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(images/viski5.jpg);
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0%;
+
+
+
+
+}
+
+#banerop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url(images/003415_1.jpg), url(images/piksla.jpg);
+    width: 100%;
+    background-color: #222;
+    height: 40vh;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: right,left;
+    margin-bottom: 0%;
+}
+
+button.normal{
+    font-size: 50px;
+    
+    margin-left: 10px;
+    padding: 0px 20px;
+    background-color: #f1b901;
+    cursor: pointer;
+    color: #000000;
+    border: 3px solid #f1b901;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    transition: 0.2s ease;
+}
+
+button.normal:hover{
+    background-color: #ffffff;
+}
+
+
+#banerop h4{
+    color: #dbdbdb;
+    font-size: 50px;
+    margin-top: -30px;
+}
+
+
+#baner h4{
+    color: #dbdbdb;
+    font-size: 50px;
+    margin-top: -30px;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #ffffff;
+
+}
+
+footer .kolona{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    
+}
+.sistemiplacanja img{
+    width: 300px;
+    height: auto;
+    
+}
+
+
+footer .logo{
+    margin-bottom: 30 px;
+}
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+
+}
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+
+}
+footer a{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+    color: #222;
+    margin-bottom: 10px;
+
+
+}
+
+footer .zapratite i{
+    padding-left: 2x;
+    font-size: 25px;
+    color: #f1b901;
+    padding-right: 4px;
+    cursor: pointer;
+    
+}
+footer a:hover{
+    color: #f1b901;
+}
+    
+
+footer .zapratite i:hover{
+    color: #000000;
+}
+
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+.sistemiplacanja p{
+    padding-left: 10px;
+}
+
+
+@media (max-width:768px){
+    
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -350px;
+        height: 100vh;
+        width: 300px;
+        background-color: #000000;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.4s;
+        
+    }
+    #navbar.active{
+        right: 0;
+    }
+
+    #navbar li{
+        margin-bottom: 24px;
+    }
+    #mobile{
+        display: flex;
+        align-items: center;
+    }
+    #mobile i{
+        font-size: 23px;
+        color: #f1b901;
+        padding-left: 20px;
+    }
+    #close{
+        display: initial;
+        position: absolute;
+        top : 30px;
+        left: 30px;
+        font-size: 26px;
+        color: #f1b901;
+  
+    }
+
+    #lg-bag{
+        display: none;
+    }
+
+
+    #hero {
+        width: 71vh;
+        height: 28vh;
+        background-size: 50%;
+        
+        background-color: #575757;
+        background-position: top 50% right 0%;
+        background-repeat: no-repeat;
+        
+        padding: 0 20px;
+        
+        
+    }
+
+    
+    #hero h1{
+        margin-top: 40px;
+        font-size: 20px;
+    }
+    #hero p{
+        font-size: 16px;
+        padding-bottom: 5px;
+        padding-right: 440px;
+    }
+    #hero button{
+
+        margin-left: 100px;
+    }
+
+    #proizvod1 .pro-container {
+        
+        justify-content: center;
+        
+        
+    }
+    #proizvod1 .pro {
+        width: 23%;
+        min-width: 250px;
+        padding: 10px 12px;
+        border: 1px solid #9c9c9c;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        margin: 15px 0;
+        transition: 0.2s ease;
+        position: relative;
+    }
+
+    
+}
+
+@media (max-width: 477px){
+    #header {
+        padding: 10px 30px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    #hero{
+        padding: 20px;
+        background-position: bottom;
+        width: auto;
+        height: 400px;
+        background-size: 70%;
+
+        
+        
+
+    }
+    #hero p{
+        padding-bottom: 5px;
+        padding-right: 1px;
+
+    }
+    div {
+        display: block;
+        unicode-bidi: isolate;
+        width: 100%;
+    }
+    #hero h1 {
+        justify-content: center;
+        text-align: center;
+        margin-top: 40px;
+        font-size: 20px;
+        
+    }
+
+
+    #hero button{
+        margin-left: 140px;
+        margin-right: 140px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        place-items: center;
+        
+    }
+    #proizvod1 .pro-container {
+        width: 100%;
+    }
+    .section-p1 {
+        padding: 40px 0px;
+        padding-bottom: 0px;
+    }
+    #baner h4 {
+        color: #dbdbdb;
+        font-size: 35px;
+        margin-top: -30px;
+    }
+    button.normal {
+        font-size: 35px;
+        margin-left: 0px;
+        padding: 0px 20px
+        
+    }
+    #banerop h4 {
+        color: #dbdbdb;
+        font-size: 40px;
+        margin-top: -60px;
+        margin-bottom: 30px;
+    }
+    #banerop {
+        
+        height: 30vh;
+        background-size: 40%;
+        
+    }
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -350px;
+        height: 100vh;
+        width: 300px;
+        background-color: #000000;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.4s;
+        
+    }
+    #navbar.active{
+        right: -100px;
+    }
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #ffffff;
+        padding-left: 10px;
+    }
+    footer h4 {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+    .section-p1 {
+        padding-left: 10px;
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+
+    
+
+}
+
+
+
+.section-pi{
+    padding-left: 80px;
+    padding-right: 80px;
+
+    padding-bottom: 0px;
+}
+
+#proizvodi {
+    text-align: center;
+    
+  
+    
+    
+
+}
+#proizvodi h2{
+    
+    padding-top: 20px;
+}
+#proizvodi .pro-container{
+    display: flex;
+    
+    justify-content: flex-start; /* Poravnava kartice levo */
+    
+    padding-top: 15px;
+    gap: 10px;
+    
+    flex-wrap: wrap;
+    
+    
+       
+}
+
+#proizvodi .pro{
+    width: 14%;
+    min-width: 250px;
+    padding: 20px 12px;
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin: 15px 0;
+    transition: 0.3s ease;
+    position: relative;
+    
+    
+}
+
+#proizvodi .pro:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    
+}
+
+#proizvodi .pro img{
+    width: 100%;
+    
+    border-radius: 15px;
+}
+
+#proizvodi .pro .opis{
+    text-align: start;
+    padding: 10px 10px;
+    
+}
+
+#proizvodi .pro .opis span{
+    color: #707780;
+    font-size: 15px;
+
+}
+#proizvodi .pro .opis h5{
+    font-size: 15px;
+}
+#proizvodi .pro .opis h4{
+    padding-top: 0px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #23474b;
+}
+
+#proizvodi .pro .korpa{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e4e3e3;
+    color: #337492;
+    border: 1px solid #a9b8be;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+#proizvodi .pro .korpa:hover{
+    background-color: #337492;
+    color: #e4e3e3;
+}
+
+#prodetails{
+    display: flex;
+    margin-top: 20px;
+    
+    
+}
+
+#prodetails .single-pro-image{
+    width: 40%;
+    margin-right: 50px;
+
+}
+
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 30px;
+}
+#prodetails .single-pro-details h6{
+    font-size: 15px;
+    
+    margin-bottom: 0%;
+    
+}
+#prodetails .single-pro-details h4{
+    font-size: 20px;
+    padding: 40px 0 20px 0;
+    margin-top: 0%;
+    
+}
+#prodetails .single-pro-details h2{
+    font-size: 26px;
+    padding-bottom: 40px 0 20px 0;
+    margin-bottom: 0%;
+    
+}
+#prodetails .single-pro-details select{
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+#prodetails .single-pro-details input{
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#prodetails .single-pro-details input:focus{
+    outline: none;
+}
+
+#prodetails .single-pro-details button{
+    margin-top: 20px;
+}
+.quantity-cart {
+    display: flex;
+    align-items: center;  /* Centriranje vertikalno */
+    gap: 10px;  /* Razmak između inputa i dugmeta */
+    margin-top: 10px;
+}
+
+.quantity-cart input {
+    width: 60px;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.quantity-cart button {
+    font-size: 35px;
+    
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    background-color: #f1b901;
+    cursor: pointer;
+    color: #000000;
+    border: 3px solid #f1b901;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    transition: 0.2s ease;/* Da bude iste visine kao input */
+    
+   
+}
+.quantity-cart button:hover{
+    background-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .section-pi {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #proizvodi .pro-container {
+        justify-content: center;
+    }
+
+    #proizvodi .pro {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* jedna stranica proizvoda */
+@media (max-width: 477px){
+#prodetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+#prodetails .single-pro-image {
+    width: 100%;
+    margin-right: 0px;
+}
+#prodetails .single-pro-details {
+    width: 100%;
+    
+}
+
+}
+
+  
+
+
+
+
+
+
