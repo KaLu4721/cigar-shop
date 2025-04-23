@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
 
@@ -11,10 +12,10 @@ const Footer = () => {
   </div>
   <div className="kolona">
     <h4>Linkovi</h4>
-    <a href="index.html">Početna</a>
-    <a href="shop.html">Proizvodi</a>
-    <a href="about.html">O nama</a>
-    <a href="contact.html">Kontakt</a>
+    <Link to="/">Početna</Link>
+        <Link to="/shop">Proizvodi</Link>
+        <Link to="/about">O nama</Link>
+        <Link to="/contact">Kontakt</Link>
   </div>
   <div className="kolona">
     <div className="zapratite">
