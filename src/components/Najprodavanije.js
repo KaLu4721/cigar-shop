@@ -27,7 +27,7 @@ const Najprodavanije = () => {
     //setTimeout(() => setIsCartVisible(false), 3000); // Automatski sakriva korpu nakon 3 sekunde
   
     localStorage.setItem('korpa', JSON.stringify(korpa));
-    alert(`${proizvod.naziv} je dodat u korpu!`);
+    
   };
   
   

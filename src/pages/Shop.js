@@ -1,8 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import CartSidebar from '../components/CartSidebar'; 
+import { useState } from 'react';
 
 const Shop = () => {
   const navigate = useNavigate();
+    const [cartItems, setCartItems] = useState([]);
+    const [isCartVisible, setIsCartVisible] = useState(false);
 
   const proizvodi = [
     { id: 1, naziv: 'Cigar broj 1', cena: '1000.00 RSD', opis: 'Kubanska' },
@@ -29,11 +33,19 @@ const Shop = () => {
     }
   
     localStorage.setItem('korpa', JSON.stringify(korpa));
-    alert(`${proizvod.naziv} je dodat u korpu!`);
+    setCartItems(korpa);
+    setIsCartVisible(true); // Prikazuje bočnu korpu
   };
   
 
   return (
+    <>
+    <CartSidebar
+      isVisible={isCartVisible}
+      onClose={() => setIsCartVisible(false)}
+      items={cartItems}
+      setCartItems={setCartItems} // Prosledićemo setCartItems funkciju
+    />
     <section id="proizvodi" className="section-pi">
       <div className="pro-container">
         {proizvodi.map((proizvod) => (
@@ -46,7 +58,6 @@ const Shop = () => {
             </div>
             <button className="korpa" onClick={(e) => {
               e.stopPropagation(); // sprečava da klik otvori detaljnu stranicu
-              
               addToCart(proizvod); // dodaj proizvod u korpu
             }}>
               <i className="fa fa-shopping-basket" />
@@ -55,6 +66,7 @@ const Shop = () => {
         ))}
       </div>
     </section>
+    </>
   );
 };
 
